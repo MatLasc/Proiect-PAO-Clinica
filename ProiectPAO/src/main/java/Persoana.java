@@ -2,6 +2,11 @@ public class Persoana {
     protected String nume;
     protected int varsta;
 
+    Persoana(String nume, int varsta){
+        this.nume = nume;
+        this.varsta = varsta;
+    }
+
     public int getVarsta() {
         return varsta;
     }

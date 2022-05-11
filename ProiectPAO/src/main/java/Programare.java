@@ -1,36 +1,36 @@
+import java.io.IOException;
+import java.util.*;
 public class Programare {
     private Pacient pacient;
     private Medic medic;
-    private int ora;
-    private int zi;
-    private int luna;
-    private int an;
-    private int minut;
+    private Data data;
+    private int cost;
+
+
+    Programare(Pacient pacient, Medic medic, Data data, int cost) throws IOException {
+              this.pacient = pacient;
+              this.medic = medic;
+              this.data = data;
+              this.cost = cost;
+              medic.getClinica().adaugaProgramare(this);
+    }
 
     public Medic getMedic() {
-        return medic;
+        return this.medic;
     }
 
     public Pacient getPacient() {
-        return pacient;
+        return this.pacient;
     }
 
-    public int getAn() {
-        return an;
-    }
 
-    public int getLuna() {
-        return luna;
-    }
+    public Data getData(){return this.data;}
 
-    public int getOra() {
-        return ora;
-    }
+    public int getCost (){return this.cost;}
 
-    public int getMinut(){
-        return minut;
-    }
-    public int getZi() {
-        return zi;
+    protected int compareTo(Programare programare){
+        Data data1 = this.getData();
+        Data data2 = programare.getData();
+        return data1.compareTo(data2);
     }
 }

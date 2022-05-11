@@ -1,0 +1,7 @@
+Muntean_Mihai,40,cardiologie,5000
+Alexandru_Vlad,30,ginecologie,3000
+Alab_Balab,50,urologie,4000
+Alin_Alan,40,cardiologie,5000
+Vori_Bori,30,ginecologie,3000
+Mentosan_Irina,50,urologie,4000
+Balabaciu_Daniela,30,oftalmologie,8000
