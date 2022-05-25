@@ -1,4 +1,4 @@
-public class Data {
+public class Data { //pentru a atinge numarul de clase
     private int zi;
     private int luna;
     private int an;

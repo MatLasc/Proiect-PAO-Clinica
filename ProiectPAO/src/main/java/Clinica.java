@@ -6,12 +6,12 @@ public class Clinica {
     private Adresa adresa;
     private Set<Medic> medici;
     private List<Cabinet> cabinete;
-    private int nr_cabinete;
+    private int nrCabinete;
 
-    Clinica(int nr_cabinete){
-        this.nr_cabinete = nr_cabinete;
+    Clinica(int nrCabinete){
+        this.nrCabinete = nrCabinete;
         int i;
-        for(i = 0; i < nr_cabinete; i++) {
+        for(i = 0; i < nrCabinete; i++) {
             cabinete.add(new Cabinet(i + 1));
         }
     }
@@ -54,10 +54,10 @@ public class Clinica {
 
     protected int cabinetLiber() {
         int i = 0;
-        while (i < nr_cabinete && (this.cabinete.get(i).ocupat)) {
+        while (i < this.nrCabinete && (this.cabinete.get(i).ocupat)) {
                 i++;
         }
-        if(i == nr_cabinete)
+        if(i == this.nrCabinete)
             return -1;
         return i;
     }
@@ -74,7 +74,7 @@ public class Clinica {
         AuditService.audit("Programare noua\n");
     }
 
-    protected void afisareProgramari(){
+    protected void sortareProgramari(){
         Collections.sort(this.programari, new ProgSort());
     }
 }

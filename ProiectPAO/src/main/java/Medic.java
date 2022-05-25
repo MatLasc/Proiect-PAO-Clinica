@@ -21,11 +21,11 @@ public class Medic extends Persoana{
         this.specializare = specializare;
     }
 
-    public int get_salariu(){
+    public int getSalariu(){
         return this.salariu;
     }
 
-    protected void set_salariu(int salariu){
+    protected void setSalariu(int salariu){
         this.salariu = salariu;
     }
 
@@ -63,7 +63,7 @@ public class Medic extends Persoana{
         this.programari = programari;
     }
 
-    protected void schimba_clinica(Clinica clinica){
+    protected void schimbaClinica(Clinica clinica){
         int x = clinica.cabinetLiber();
         if(x == -1) {
             System.out.print("Nu se poate asa ceva");
@@ -74,5 +74,10 @@ public class Medic extends Persoana{
         this.setClinica(clinica);
         this.setCabinet(this.clinica.getCabinete().get(x));
         this.clinica.medicNou(this);
+    }
+
+    protected void demisieMedic(){
+        this.cabinet.elibereaza();
+        this.clinica.pleacaMedic(this);
     }
 }

@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Persoana {
     protected String nume;
     protected int varsta;
@@ -22,4 +24,6 @@ public class Persoana {
     public void setVarsta(int varsta) {
         this.varsta = varsta;
     }
+
+    protected void cresteVarsta() throws IOException {this.varsta++; AuditService.audit("Varsta actualizata pentru " + getNume());}
 }

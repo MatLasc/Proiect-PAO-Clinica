@@ -2,7 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-public class MediciCSV {
+public final class MediciCSV {
+    private static MediciCSV instance;
     private File file;
     private Scanner reader;
     MediciCSV() throws FileNotFoundException {
@@ -22,6 +23,12 @@ public class MediciCSV {
         while (reader.hasNextLine()) {
             String data = reader.nextLine();
         }
+    }
+    public static MediciCSV getInstance() throws FileNotFoundException {
+        if (instance == null){
+            instance = new MediciCSV();
+        }
+        return instance;
     }
 
 }
